@@ -1,54 +1,405 @@
-body {
-	background: #fff;
-	font: 15px Arial, Helvetica, sans-serif;
-	line-height: 1.4;
-	margin: 50px 0;
-	margin-bottom: 100px;
-}
-em {
-	color: #999;
-}
-p {
-	line-height: 1.4;
-}
-ul {
-	margin-bottom: 0;
-}
-section {
-	margin-bottom: 2em;
-}
-blockquote {
+/*===========================================================
+	CSS Reset
+
+	http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License: none (public domain)
+============================================================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
-	margin-bottom: 1em;
+	padding: 0;
+
+	vertical-align: baseline;
+
+	border: 0;
+
+	font: inherit;
+	font-size: 100%;
 }
-.item {
-	margin-bottom: 1em;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-#resume {
-	margin: 0 auto;
-	max-width: 480px;
-	padding: 0 20px;
+body {
+	line-height: 1;
 }
-#basics {
-	margin-bottom: -10px;
+ol, ul {
+	list-style: none;
 }
-#basics h3 {
-	margin-top: 1.5em;
+blockquote, q {
+	quotes: none;
 }
-#basics .contact strong,
-#location strong {
-	clear: both;
-	float: left;
-	line-height: 1.3;
-	width: 120px;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-#profiles,
-#skills {
-	overflow: hidden;
-}
-#profiles .item,
-#skills .item {
-	float: left;
-	width: 50%;
+table {
+	border-spacing: 0;
+
+	border-collapse: collapse;
 }
 
+/*===========================================================
+	JSON Resume - Theme styles
+============================================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 40px 0;
+
+	color: #252525;
+	background: #F6F9FC;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+h1 {
+	letter-spacing: 0.2px;
+
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+h2 {
+	margin-bottom: 1.4rem;
+
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+
+	color: rgba(36,36,36,0.80);
+
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+h3 {
+	margin-bottom: 0.4rem;
+
+	color: #252525;
+
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+h4 {
+	margin-bottom: 0.4rem;
+
+	letter-spacing: 0.5px;
+
+	color: rgba(36,36,36,0.80);
+
+	font-size: 0.9rem;
+	font-weight: 600;
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+
+	color: rgba(36,36,36,0.40);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	line-height: 1.8;
+}
+
+em {
+	color: rgba(36,36,36,0.40);
+
+	font-size: 0.9rem;
+	font-weight: normal;
+}
+
+strong {
+	color: rgba(37,37,37,0.80);
+
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+blockquote {
+	position: relative;
+
+	padding-top: 0.2rem;
+	padding-left: 1.4rem;
+}
+
+blockquote:before {
+	position: absolute;
+	top: -10px;
+	left: 0;
+
+	content: '“';
+
+	color: #D1D5D8;
+
+	font-family: 'Garamond', 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+li {
+	padding: 0.4rem 0 0.4rem 1rem;
+
+	line-height: 1.8;
+}
+
+li:before {
+  display: inline-block;
+
+	width: 1em;
+  margin-left: -1em;
+
+	content: '•';
+
+	color: #D1D5D8;
+}
+
+ul.inline {
+	display: inline-block;
+
+	list-style-type: none;
+}
+
+ul.inline li {
+	display: inline-block;
+
+	margin-right: 0.6rem;
+	padding: 0;
+
+	line-height: 1;
+}
+
+ul.inline em {
+	margin-left: 0.1rem;
+}
+
+ul.inline li:before {
+	content: '';
+	content: none;
+}
+
+ul.comma li {
+	margin: 0;
+}
+
+ul.comma li:not(:last-of-type):after {
+	content: ',';
+}
+
+section {
+	clear: both;
+
+	padding: 4rem 0;
+
+	border-bottom: 1px solid #F1F2FB;
+}
+
+#resume {
+	position: relative;
+
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0;
+
+	border-radius: 4px;
+	background: #FFFFFF;
+	box-shadow: 1px 2px 10px 0 rgba(0,0,0,0.05);
+}
+
+.left {
+	position: absolute;
+	left: 0;
+
+	padding: 0 40px 0 80px;
+	padding-top: 0.1rem;
+}
+
+.left h2 {
+	color: #20476A;
+
+	font-size: 1rem;
+}
+
+.right {
+	padding: 0 80px 0 250px;
+}
+
+.date, .releaseDate {
+	margin-bottom: 1.2rem;
+
+	color: rgba(36,36,36,0.40);
+
+	font-size: 0.9rem;
+}
+
+#basics {
+	border-bottom: 2px solid #F1F2FB;
+}
+
+#basics img.picture {
+	width: 100px;
+	height: 100px;
+
+	border-radius: 50%;
+}
+
+#location {
+	margin-bottom: 0.4rem;
+}
+
+#basics .contact {
+	color: rgba(36,36,36,0.40);
+
+	font-size: 0.9rem;
+}
+
+#basics .contact span {
+	display: inline-block;
+
+	padding-bottom: 0.4rem;
+}
+
+#basics .contact a {
+	margin-right: 1rem;
+}
+
+#profiles li a {
+	color: rgba(36,36,36,0.60);
+}
+
+#profiles .network {
+	margin: 30px 30px 0 0;
+	padding: 0 0 0 40px;
+
+	background-size: 30px 30px;
+
+	line-height: 30px;
+}
+
+#work .item,
+#volunteer .item,
+#awards .item,
+#publications .item {
+	margin-bottom: 4rem;
+}
+
+#work .item:last-child,
+#volunteer .item:last-child,
+#awards .item:last-child,
+#publications .item:last-child {
+	margin-bottom: 0;
+}
+
+#work .website,
+#volunteer .website,
+#awards .website,
+#publications .website {
+	margin-bottom: 1.4rem;
+}
+
+#work .summary,
+#volunteer .summary,
+#awards .summary,
+#publications .summary {
+	margin-bottom: 1.2rem;
+}
+
+#skills .name,
+#interests .name {
+	display: inline-block;
+
+	width: 150px;
+	margin: 0 1.4rem 1.4rem 0;
+
+	vertical-align: top;
+	letter-spacing: 0.5px;
+
+	color: rgba(36,36,36,0.80);
+
+	font-weight: 600;
+}
+
+#skills .keywords {
+	max-width: 470px;
+}
+
+#education .studyType {
+	margin-bottom: 1.4rem;
+}
+
+#references .name {
+	padding: 1.2rem 1.2rem 0 0;
+
+	text-align: right;
+}
+
+.copy {
+	margin: 1.4rem auto 4rem auto;
+
+	text-align: center;
+
+	color: #C2C6C9;
+
+	font-size: 0.8rem;
+}
+
+.copy a {
+	text-decoration: underline;
+
+	color: #C2C6C9;
+}
+
+/*===========================================================
+	Responsiveness
+============================================================*/
+
+@media (max-width: 980px) {
+	#resume {
+		max-width: none;
+		margin: 1.4rem;
+	}
+}
+
+@media (max-width: 800px) {
+	.left {
+		position: static;
+
+		padding: 0 40px;
+	}
+	.right {
+		padding: 0 40px;
+	}
+	.contact {
+		margin-bottom: 1.2rem;
+	}
+	#basics .left, #basics .right {
+		text-align: center;
+	}
+}

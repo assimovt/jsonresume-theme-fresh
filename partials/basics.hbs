@@ -1,90 +1,85 @@
 {{#resume.basics}}
-	<h1>{{name}}</h1>
-	<h2>{{label}}</h2>
 	<section id="basics">
-		<div class="contact">
-		{{#if website}}
-		<div class="website">
-			<strong>Website</strong>
-			{{website}}
+		<div class="left">
+			{{#if picture}}
+				<img class="picture" src="{{picture}}" alt="{{name}} avatar"/>
+			{{else}}
+				<img class="picture" src="https://api.adorable.io/avatars/285/{{name}}.png" alt="{{name}} avatar"/>
+			{{/if}}
 		</div>
-		{{/if}}
-		{{#if email}}
-		<div class="email">
-			<strong>Email</strong>
-			{{email}}
+
+
+		<div class="right">
+			<h1>{{name}}</h1>
+			<h2>{{label}}</h2>
+
+			<div class="contact">
+				{{#location}}
+				<ul class="inline comma" id="location">
+					{{#if address}}
+					<li class="address">{{address}}</li>
+					{{/if}}
+					{{#if postalCode}}
+					<li class="postalCode">{{postalCode}}</li>
+					{{/if}}
+					{{#if city}}
+					<li class="city">{{city}}</li>
+					{{/if}}
+					{{#if region}}
+					<li class="region">{{region}}</li>
+					{{/if}}
+					{{#if countryCode}}
+					<li class="countryCode">{{countryCode}}</li>
+					{{/if}}
+				</ul>
+				{{/location}}
+			</div>
+
+			<div class="contact">
+				{{#if website}}
+				<span class="website">
+					<strong>Website: </strong>
+					<a href="{{website}}" target="_blank">{{website}}</a>
+				</span>
+				{{/if}}
+
+				{{#if email}}
+				<span class="email">
+					<strong>Email: </strong>
+					<a href="mailto:{{email}}" target="_blank">{{email}}</a>
+				</span>
+				{{/if}}
+
+				{{#if phone}}
+				<span class="phone">
+					<strong>Phone: </strong>
+					<a href="tel:{{phone}}" target="_blank">{{phone}}</a>
+				</span>
+				{{/if}}
+			</div>
+
+			{{#if profiles.length}}
+			<ul class="inline" id="profiles">
+				{{#each profiles}}
+					{{#if username}}
+					<li class="network" style="background: url('images/profiles/{{network}}.svg') no-repeat left top;">
+						<a href="{{url}}" target="_blank">{{username}}</a>
+					</li>
+					{{/if}}
+				{{/each}}
+			</ul>
+			{{/if}}
 		</div>
-		{{/if}}
-		{{#if phone}}
-		<div class="phone">
-			<strong>Phone</strong>
-			{{phone}}
+	</section>
+
+	{{#if summary}}
+	<section id="summary">
+		<div class="left">
+			<h2>Summary</h2>
 		</div>
-		{{/if}}
-		</div>
-		{{#if summary}}
-		<div class="summary">
+		<div class="right">
 			<p>{{summary}}</p>
 		</div>
-		{{/if}}
-		{{#location}}
-		<h3>Location</h3>
-		<section id="location">
-			{{#if address}}
-			<div class="address">
-				<strong>Address</strong>
-				{{address}}
-			</div>
-			{{/if}}
-			{{#if postalCode}}
-			<div class="postalCode">
-				<strong>Postal code</strong>
-				{{postalCode}}
-			</div>
-			{{/if}}
-			{{#if city}}
-			<div class="city">
-				<strong>City</strong>
-				{{city}}
-			</div>
-			{{/if}}
-			{{#if countryCode}}
-			<div class="countryCode">
-				<strong>Country code</strong>
-				{{countryCode}}
-			</div>
-			{{/if}}
-			{{#if region}}
-			<div class="region">
-				<strong>Region</strong>
-				{{region}}
-			</div>
-			{{/if}}
-		</section>
-		{{/location}}
-		{{#if profiles.length}}
-		<h3>Profiles</h3>
-		<section id="profiles">
-			{{#each profiles}}
-			<div class="item">
-				{{#if network}}
-				<strong class="network">
-					{{network}}
-				</strong>
-				{{/if}}
-				{{#if username}}
-				<div class="username">
-					{{username}}
-				</div>
-				{{/if}}
-				{{#if url}}
-				<div class="url">
-					<a href="{{url}}">Link</a>
-				</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</section>
-		{{/if}}
 	</section>
+	{{/if}}
 {{/resume.basics}}

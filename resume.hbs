@@ -1,19 +1,19 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
-	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+
+	<title>{{#resume.basics}}{{name}} &sdot; {{label}}{{/resume.basics}}</title>
 
 	<style>
 	{{{css}}}
 	</style>
-	
+
 	</head>
 	<body>
-	
+
 	<div id="resume">
 		{{> basics }}
 		{{> work }}
@@ -25,5 +25,11 @@
 		{{> languages }}
 		{{> interests }}
 		{{> references }}
+	</div>
+
+	<div class="copy">
+		Powered by <a href="https://jsonresume.org" target="_blank">JSON Resume</a> &sdot;
+		Theme by <a href="https://github.com/assimovt">Tair Assimov</a>
+	</div>
 	</body>
 </html>
