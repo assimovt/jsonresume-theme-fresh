@@ -62,7 +62,7 @@
       <ul class="inline" id="profiles">
         {{#each profiles}}
           {{#if username}}
-          <li class="network" style="background: url('images/profiles/{{network}}.svg') no-repeat left top;">
+          <li class="network {{network}}">
             <a href="{{url}}" target="_blank">{{username}}</a>
           </li>
           {{/if}}
