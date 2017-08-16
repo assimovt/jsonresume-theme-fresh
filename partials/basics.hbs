@@ -1,85 +1,85 @@
 {{#resume.basics}}
-	<section id="basics">
-		<div class="left">
-			{{#if picture}}
-				<img class="picture" src="{{picture}}" alt="{{name}} avatar"/>
-			{{else}}
-				<img class="picture" src="https://api.adorable.io/avatars/285/{{name}}.png" alt="{{name}} avatar"/>
-			{{/if}}
-		</div>
+  <section id="basics">
+    <div class="left">
+      {{#if picture}}
+        <img class="picture" src="{{picture}}" alt="{{name}} avatar"/>
+      {{else}}
+        <img class="picture" src="https://api.adorable.io/avatars/285/{{name}}.png" alt="{{name}} avatar"/>
+      {{/if}}
+    </div>
 
 
-		<div class="right">
-			<h1>{{name}}</h1>
-			<h2>{{label}}</h2>
+    <div class="right">
+      <h1>{{name}}</h1>
+      <h2>{{label}}</h2>
 
-			<div class="contact">
-				{{#location}}
-				<ul class="inline comma" id="location">
-					{{#if address}}
-					<li class="address">{{address}}</li>
-					{{/if}}
-					{{#if postalCode}}
-					<li class="postalCode">{{postalCode}}</li>
-					{{/if}}
-					{{#if city}}
-					<li class="city">{{city}}</li>
-					{{/if}}
-					{{#if region}}
-					<li class="region">{{region}}</li>
-					{{/if}}
-					{{#if countryCode}}
-					<li class="countryCode">{{countryCode}}</li>
-					{{/if}}
-				</ul>
-				{{/location}}
-			</div>
+      <div class="contact">
+        {{#location}}
+        <ul class="inline comma" id="location">
+          {{#if address}}
+          <li class="address">{{address}}</li>
+          {{/if}}
+          {{#if postalCode}}
+          <li class="postalCode">{{postalCode}}</li>
+          {{/if}}
+          {{#if city}}
+          <li class="city">{{city}}</li>
+          {{/if}}
+          {{#if region}}
+          <li class="region">{{region}}</li>
+          {{/if}}
+          {{#if countryCode}}
+          <li class="countryCode">{{countryCode}}</li>
+          {{/if}}
+        </ul>
+        {{/location}}
+      </div>
 
-			<div class="contact">
-				{{#if website}}
-				<span class="website">
-					<strong>Website: </strong>
-					<a href="{{website}}" target="_blank">{{website}}</a>
-				</span>
-				{{/if}}
+      <div class="contact">
+        {{#if website}}
+        <span class="website">
+          <strong>Website: </strong>
+          <a href="{{website}}" target="_blank">{{website}}</a>
+        </span>
+        {{/if}}
 
-				{{#if email}}
-				<span class="email">
-					<strong>Email: </strong>
-					<a href="mailto:{{email}}" target="_blank">{{email}}</a>
-				</span>
-				{{/if}}
+        {{#if email}}
+        <span class="email">
+          <strong>Email: </strong>
+          <a href="mailto:{{email}}" target="_blank">{{email}}</a>
+        </span>
+        {{/if}}
 
-				{{#if phone}}
-				<span class="phone">
-					<strong>Phone: </strong>
-					<a href="tel:{{phone}}" target="_blank">{{phone}}</a>
-				</span>
-				{{/if}}
-			</div>
+        {{#if phone}}
+        <span class="phone">
+          <strong>Phone: </strong>
+          <a href="tel:{{phone}}" target="_blank">{{phone}}</a>
+        </span>
+        {{/if}}
+      </div>
 
-			{{#if profiles.length}}
-			<ul class="inline" id="profiles">
-				{{#each profiles}}
-					{{#if username}}
-					<li class="network" style="background: url('images/profiles/{{network}}.svg') no-repeat left top;">
-						<a href="{{url}}" target="_blank">{{username}}</a>
-					</li>
-					{{/if}}
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-	</section>
+      {{#if profiles.length}}
+      <ul class="inline" id="profiles">
+        {{#each profiles}}
+          {{#if username}}
+          <li class="network" style="background: url('images/profiles/{{network}}.svg') no-repeat left top;">
+            <a href="{{url}}" target="_blank">{{username}}</a>
+          </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+  </section>
 
-	{{#if summary}}
-	<section id="summary">
-		<div class="left">
-			<h2>Summary</h2>
-		</div>
-		<div class="right">
-			<p>{{summary}}</p>
-		</div>
-	</section>
-	{{/if}}
+  {{#if summary}}
+  <section id="summary">
+    <div class="left">
+      <h2>Summary</h2>
+    </div>
+    <div class="right">
+      <p>{{summary}}</p>
+    </div>
+  </section>
+  {{/if}}
 {{/resume.basics}}

@@ -1,57 +1,57 @@
 {{#if resume.volunteer.length}}
 <section id="volunteer">
-	<div class="left">
-		<h2>Volunteer</h2>
-	</div>
+  <div class="left">
+    <h2>Volunteer</h2>
+  </div>
 
-	<div class="right">
-		{{#each resume.volunteer}}
-		<div class="item">
-			<div class="date">
-				{{#if startDate}}
-				<span class="startDate">
-					{{startDate}}
-				</span>
-				{{/if}}
-				{{#if endDate}}
-				<span class="endDate">
-					- {{endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-				{{/if}}
-			</div>
-			{{#if organization}}
-			<h3 class="company">
-				{{organization}}
-			</h3>
-			{{/if}}
-			{{#if position}}
-			<h4 class="position">
-				{{position}}
-			</h4>
-			{{/if}}
-			{{#if website}}
-			<div class="website">
-				<a href="{{website}}">{{website}}</a>
-			</div>
-			{{/if}}
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</div>
+  <div class="right">
+    {{#each resume.volunteer}}
+    <div class="item">
+      <div class="date">
+        {{#if startDate}}
+        <span class="startDate">
+          {{startDate}}
+        </span>
+        {{/if}}
+        {{#if endDate}}
+        <span class="endDate">
+          - {{endDate}}
+        </span>
+        {{else}}
+        <span class="endDate">
+          - Present
+        </span>
+        {{/if}}
+      </div>
+      {{#if organization}}
+      <h3 class="company">
+        {{organization}}
+      </h3>
+      {{/if}}
+      {{#if position}}
+      <h4 class="position">
+        {{position}}
+      </h4>
+      {{/if}}
+      {{#if website}}
+      <div class="website">
+        <a href="{{website}}">{{website}}</a>
+      </div>
+      {{/if}}
+      {{#if summary}}
+      <div class="summary">
+        <p>{{summary}}</p>
+      </div>
+      {{/if}}
+      {{#if highlights.length}}
+      <ul class="highlights">
+        {{#each highlights}}
+        <li>{{.}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
 </section>
 {{/if}}
