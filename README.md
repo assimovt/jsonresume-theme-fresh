@@ -1,6 +1,6 @@
 # Fresh theme for JSON Resume [![](https://badge.fury.io/js/jsonresume-theme-fresh.svg)](https://www.npmjs.org/package/jsonresume-theme-fresh)
 
-This is repository is based on the [boilerplate theme](https://github.com/jsonresume/jsonresume-theme-boilerplate) for [JSON Resume](http://jsonresume.org/).
+This repository is based on the [boilerplate theme](https://github.com/jsonresume/jsonresume-theme-boilerplate) for [JSON Resume](http://jsonresume.org/).
 
 ## Getting started
 
