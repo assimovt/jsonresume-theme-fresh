@@ -216,7 +216,7 @@ ul.comma li:not(:last-of-type):after {
 section {
   clear: both;
 
-  padding: 4rem 0;
+  padding: 2rem 0;
 
   border-bottom: 1px solid #F1F2FB;
 }
@@ -252,7 +252,7 @@ section {
 }
 
 .date, .releaseDate {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
 
   color: rgba(36,36,36,0.40);
 
